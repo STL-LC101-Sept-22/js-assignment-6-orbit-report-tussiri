@@ -6,11 +6,14 @@
     <th>Orbit Type</th>
     <th>Launch Date</th>
   </tr>
-  <tr *ngFor="let satellite of satellites" class="data-row" id="table-row">
+  <tr
+    [class.even]="satellites.indexOf(satellite) % 2 === 0"
+    [class.odd]="satellites.indexOf(satellite) % 2 !== 0"
+    *ngFor="let satellite of satellites"
+    class="data-row"
+    id="table-row"
+  >
     <td>{{ satellite.name }}</td>
-    <!-- <td *ngIf="satellite.type === 'Space Debris'" class="warning">
-      {{ satellite.type }}
-    </td> -->
     <td [class.warning]="satellite.isSpaceDebris()">{{ satellite.type }}</td>
     <td>{{ satellite.operational }}</td>
     <td>{{ satellite.orbitType }}</td>
