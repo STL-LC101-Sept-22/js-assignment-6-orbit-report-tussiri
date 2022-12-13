@@ -8,19 +8,13 @@
   </tr>
   <tr *ngFor="let satellite of satellites" class="data-row" id="table-row">
     <td>{{ satellite.name }}</td>
-    <td *ngIf="satellite.type === 'Space Debris'" class="warning">
+    <!-- <td *ngIf="satellite.type === 'Space Debris'" class="warning">
       {{ satellite.type }}
-    </td>
-    <td [class.warning]="isSpaceDebris">{{ satellite.type }}</td>
-    <td>{{ satellite.type }}</td>
+    </td> -->
+    <td [class.warning]="satellite.isSpaceDebris()">{{ satellite.type }}</td>
     <td>{{ satellite.operational }}</td>
     <td>{{ satellite.orbitType }}</td>
     <td>{{ satellite.launchDate }}</td>
-    <!-- <td>GPS 938</td>
-        <td>Positioning</td>
-        <td>true</td>
-        <td>HIGH</td>
-        <td>2001-11-01</td> -->
   </tr>
 </table>
 

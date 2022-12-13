@@ -23,5 +23,3 @@ export class Satellite {
     return this.type === "Space Debris";
   }
 }
-
-// TODO 3a: fix isSpaceDebris check
